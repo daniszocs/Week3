@@ -9,9 +9,8 @@ public class App
     {
 //        Phone phone= new Samsung(); // shouldn't compile
         Phone phone = new SamsungGalaxy6();
-
         phone.setIMEI("123456789012345");
-        System.out.println("IMEI:" + phone.IMEI);
+        System.out.println("IMEI:" + phone.getIMEI());
 
         phone.addContact("1", "0770 070 707", "George", "Dumitrescu");
         phone.addContact("2", "0755 555 555", "Radu", "Costantinescu");
@@ -32,6 +31,7 @@ public class App
 
         phone.call("0770 070 707");
         phone.viewHistory();
+        System.out.println("Battery life: " + phone.getBatteryLife() + " h.");
     }
 }
 

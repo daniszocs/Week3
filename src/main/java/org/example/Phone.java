@@ -8,7 +8,7 @@ public class Phone{
 
     String color;
     String material;
-    int batteryLife;
+    int batteryLife = 1000;
     String IMEI;
 
     public void addContact(String s, String phone_number, String first_name, String last_name) {
@@ -31,8 +31,8 @@ public class Phone{
     List<Message> Messages = new ArrayList<>();
 
     public void sendMessage(String phoneNumber, String messageContent) {
-        if (messageContent.length() > 100) {
-            System.out.println("Message to " + phoneNumber + " was too long (>100).");
+        if (messageContent.length() > 500) {
+            System.out.println("Message was too long (>500).");
         }
         else {
             System.out.println("Message " + "'" + messageContent + "'" + " was sent to: " + phoneNumber);
@@ -40,6 +40,7 @@ public class Phone{
             message.to = phoneNumber;
             message.content = messageContent;
             Messages.add(message);
+            batteryLife = batteryLife - 1;
         }
     }
 
@@ -47,7 +48,7 @@ public class Phone{
         for (Message message:Messages
         ) {
             if (message.to.equals(phoneNumber)) {
-                System.out.println("Message from " + phoneNumber + ": " + message.content);
+                System.out.println("Messages from " + phoneNumber + ": " + message.content);
             }
         }
 
@@ -59,6 +60,7 @@ public class Phone{
             PhoneCall phoneCall = new PhoneCall();
             phoneCall.to = phoneNumber;
             PhoneCalls.add(phoneCall);
+            batteryLife = batteryLife - 2;
     }
 
     public void viewHistory() {

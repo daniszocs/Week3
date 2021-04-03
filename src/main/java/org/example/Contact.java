@@ -27,7 +27,12 @@ public class Contact {
     }
 
     public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+        if (first_name.length() > 100) {
+            System.out.println("First name too long (>100)");
+        }
+        else {
+            this.first_name = first_name;
+        }
     }
 
     public String getFirst_name() {
@@ -35,7 +40,12 @@ public class Contact {
     }
 
     public void setLast_name(String last_name) {
-        this.last_name = last_name;
+        if (last_name.length() > 100) {
+            System.out.println("Last name too long (>100)");
+        }
+        else {
+            this.last_name = last_name;
+        }
     }
 
     public String getLast_name() {
