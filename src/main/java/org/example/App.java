@@ -11,20 +11,27 @@ public class App
         Phone phone = new SamsungGalaxy6();
 
         phone.setIMEI("123456789012345");
-        System.out.println(phone.IMEI);
+        System.out.println("IMEI:" + phone.IMEI);
 
-        phone.addContact("1", "phone number", "fist name", "last name");
-        phone.addContact("2", "phone number", "fist name", "last name");
+        phone.addContact("1", "0770 070 707", "George", "Dumitrescu");
+        phone.addContact("2", "0755 555 555", "Radu", "Costantinescu");
         phone.listContacts();
+
+        phone.call("0733 333 333");
 
         // send a message to the first contact from the previous listed
         // max number of characters - 100
-//        phone.sendMessage("phone number", "message content");
-//        phone.listMessages("phone number");
-
+        phone.sendMessage(phone.Contacts.get(0).getPhone_number(), "Hello George :)");
         // send a message to the second contact from the previous listed
-//        phone.call("phone number");
-//        phone.viewHistory();
+        phone.sendMessage(phone.Contacts.get(1).getPhone_number(), "Hey Radu");
+        phone.sendMessage(phone.Contacts.get(1).getPhone_number(), "Am ceva sa iti povestesc.");
+        phone.sendMessage(phone.Contacts.get(0).getPhone_number(), "Stii masina aia de colectie ce am vazut-o cand am trecut prin Oradea? Sa stii ca am cumparat-o.Ce parere ai?");
+        phone.sendMessage(phone.Contacts.get(0).getPhone_number(), "Am facut o investitie buna?");
+        phone.listMessages("0770 070 707");
+
+
+        phone.call("0770 070 707");
+        phone.viewHistory();
     }
 }
 

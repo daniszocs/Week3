@@ -1,11 +1,14 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Contact {
 
     String s;
     String phone_number;
     String first_name;
     String last_name;
+    ArrayList Contacts;
 
     public void setS(String s) {
         this.s = s;
