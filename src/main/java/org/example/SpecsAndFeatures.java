@@ -23,8 +23,6 @@ public interface SpecsAndFeatures {
 
     void listMessages(String phoneNumber);
 
-    List<PhoneCall> PhoneCalls = new ArrayList<>();
-
     void call(String phoneNumber);
 
     void viewHistory() ;

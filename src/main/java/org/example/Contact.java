@@ -24,7 +24,7 @@ public class Contact {
     }
 
     public void setFirst_name(String first_name) {
-
+        // *  max number of characters - 100
         if (first_name.length() > 100) {
             System.out.println("First name too long (>100)");
         }

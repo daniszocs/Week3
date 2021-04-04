@@ -23,8 +23,6 @@ public class Phone implements SpecsAndFeatures{
         Contacts.add(contact);
     }
 
-    //List<Contact> Contacts = new ArrayList<>();
-
     @Override
     public void listContacts() {
         for (Contact contact:Contacts
@@ -32,8 +30,6 @@ public class Phone implements SpecsAndFeatures{
             System.out.println(contact.getS() + ". " + contact.getFirst_name() + " " + contact.getLast_name() + " (" + contact.getPhone_number() + ")");
         }
     }
-
-    //List<Message> Messages = new ArrayList<>();
 
     @Override
     public void sendMessage(String phoneNumber, String Content) {
@@ -63,7 +59,7 @@ public class Phone implements SpecsAndFeatures{
 
     }
 
-    //List<PhoneCall> PhoneCalls = new ArrayList<>();
+    List<PhoneCall> PhoneCalls = new ArrayList<>();
 
     @Override
     public void call(String phoneNumber) {
