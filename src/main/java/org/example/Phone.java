@@ -5,9 +5,12 @@ import java.util.List;
 
 public class Phone implements SpecsAndFeatures{
 
+    // * - properties which cannot change: battery life (in number of hours)
+    // * - properties that are configurable: color, material
+    // * - properties that are instance specific: imei
+    int batteryLife = 1000;
     String color;
     String material;
-    int batteryLife = 1000;
     String IMEI;
 
     @Override
@@ -20,7 +23,7 @@ public class Phone implements SpecsAndFeatures{
         Contacts.add(contact);
     }
 
-    List<Contact> Contacts = new ArrayList<>();
+    //List<Contact> Contacts = new ArrayList<>();
 
     @Override
     public void listContacts() {
@@ -30,10 +33,11 @@ public class Phone implements SpecsAndFeatures{
         }
     }
 
-    List<Message> Messages = new ArrayList<>();
+    //List<Message> Messages = new ArrayList<>();
 
     @Override
     public void sendMessage(String phoneNumber, String Content) {
+        // *  - a message can have maximum 500 chars
         if (Content.length() > 500) {
             System.out.println("Message was too long (>500).");
         }
@@ -43,6 +47,7 @@ public class Phone implements SpecsAndFeatures{
             message.to = phoneNumber;
             message.content = Content;
             Messages.add(message);
+            // *  - every time a message is send an hour is taken from the battery life
             batteryLife = batteryLife - 1;
         }
     }
@@ -58,7 +63,7 @@ public class Phone implements SpecsAndFeatures{
 
     }
 
-    List<PhoneCall> PhoneCalls = new ArrayList<>();
+    //List<PhoneCall> PhoneCalls = new ArrayList<>();
 
     @Override
     public void call(String phoneNumber) {
@@ -66,6 +71,7 @@ public class Phone implements SpecsAndFeatures{
             PhoneCall phoneCall = new PhoneCall();
             phoneCall.to = phoneNumber;
             PhoneCalls.add(phoneCall);
+            // *  - every time a call is made two hours are taken from the battery life
             batteryLife = batteryLife - 2;
     }
 
@@ -108,5 +114,7 @@ public class Phone implements SpecsAndFeatures{
     public String getIMEI() {
         return IMEI;
     }
+
+
 
 }
