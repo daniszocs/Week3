@@ -13,6 +13,8 @@ public class Phone implements SpecsAndFeatures{
     String material;
     String IMEI;
 
+    List<Contact> Contacts = new ArrayList<>();
+
     @Override
     public void addContact(String s, String phone_number, String first_name, String last_name) {
         Contact contact = new Contact();
@@ -30,6 +32,8 @@ public class Phone implements SpecsAndFeatures{
             System.out.println(contact.getS() + ". " + contact.getFirst_name() + " " + contact.getLast_name() + " (" + contact.getPhone_number() + ")");
         }
     }
+
+    List<Message> Messages = new ArrayList<>();
 
     @Override
     public void sendMessage(String phoneNumber, String Content) {

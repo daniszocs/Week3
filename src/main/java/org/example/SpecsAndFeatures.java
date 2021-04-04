@@ -1,8 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public interface SpecsAndFeatures {
     // * - properties which cannot change: battery life (in number of hours)
     // * - properties that are configurable: color, material
@@ -14,10 +11,7 @@ public interface SpecsAndFeatures {
 
     void addContact(String s, String phone_number, String first_name, String last_name);
 
-    List<Contact> Contacts = new ArrayList<>();
     void listContacts();
-
-    List<Message> Messages = new ArrayList<>();
 
     void sendMessage(String phoneNumber, String messageContent) ;
 
