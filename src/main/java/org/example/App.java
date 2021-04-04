@@ -20,21 +20,21 @@ public class App {
 
         // * - you can send a text message
         // send a message to the first contact from the previous listed
-        phone.sendMessage(phone.Contacts.get(0).getPhone_number(), "Hello George :)");
+        phone.sendMessage(phone.Contacts.get(0).getPhoneNumber(), "Hello George :)");
         // send a message to the second contact from the previous listed
-        phone.sendMessage(phone.Contacts.get(1).getPhone_number(), "Hey Radu");
+        phone.sendMessage(phone.Contacts.get(1).getPhoneNumber(), "Hey Radu");
         // send more messages
         phone.sendMessage("0755 555 555", "Am ceva sa iti povestesc.");
         phone.sendMessage("0770 070 707", "Stii masina aia de colectie ce am vazut-o cand am trecut prin Oradea? Sa stii ca am cumparat-o.Ce parere ai?");
         phone.sendMessage("0770 070 707", "Am facut o investitie buna?");
         // * - you can see all messages for a specific contact
-        phone.listMessages(phone.Contacts.get(0).getPhone_number());
+        phone.listMessages(phone.Contacts.get(0).getPhoneNumber());
 
 
         // * - you can make a call
         phone.call("0733 333 333");
         // * - make a call to the second contact
-        phone.call(phone.Contacts.get(1).getPhone_number());
+        phone.call(phone.Contacts.get(1).getPhoneNumber());
         // * - you can see all calls history
         phone.viewHistory();
 

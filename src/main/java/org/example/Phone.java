@@ -19,9 +19,9 @@ public class Phone implements SpecsAndFeatures {
     public void addContact(String s, String phone_number, String first_name, String last_name) {
         Contact contact = new Contact();
         contact.setS(s);
-        contact.setPhone_number(phone_number);
-        contact.setFirst_name(first_name);
-        contact.setLast_name(last_name);
+        contact.setPhoneNumber(phone_number);
+        contact.setFirstName(first_name);
+        contact.setLastName(last_name);
         Contacts.add(contact);
     }
 
@@ -29,7 +29,7 @@ public class Phone implements SpecsAndFeatures {
     public void listContacts() {
         for (Contact contact : Contacts
         ) {
-            System.out.println(contact.getS() + ". " + contact.getFirst_name() + " " + contact.getLast_name() + " (" + contact.getPhone_number() + ")");
+            System.out.println(contact.getS() + ". " + contact.getFirstName() + " " + contact.getLastName() + " (" + contact.getPhoneNumber() + ")");
         }
     }
 

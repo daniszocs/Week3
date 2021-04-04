@@ -3,9 +3,9 @@ package org.example;
 public class Contact {
 
     String s;
-    String phone_number;
-    String first_name;
-    String last_name;
+    String phoneNumber;
+    String firstName;
+    String lastName;
 
     public void setS(String s) {
         this.s = s;
@@ -15,38 +15,38 @@ public class Contact {
         return s;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setFirst_name(String first_name) {
+    public void setFirstName(String firstName) {
         // *  max number of characters - 100
-        if (first_name.length() > 100) {
+        if (firstName.length() > 100) {
             System.out.println("First name too long (>100)");
         } else {
-            this.first_name = first_name;
+            this.firstName = firstName;
         }
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setLast_name(String last_name) {
+    public void setLastName(String lastName) {
         // *  max number of characters - 100
-        if (last_name.length() > 100) {
+        if (lastName.length() > 100) {
             System.out.println("Last name too long (>100)");
         } else {
-            this.last_name = last_name;
+            this.lastName = lastName;
         }
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
 }
