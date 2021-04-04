@@ -56,7 +56,7 @@ public class Phone implements SpecsAndFeatures {
         for (Message message : Messages
         ) {
             if (message.to.equals(phoneNumber)) {
-                System.out.println("Messages to " + phoneNumber + ": " + message.content);
+                System.out.println("Messages sent to " + phoneNumber + ": " + message.content);
             }
         }
 

@@ -25,7 +25,7 @@ public class App {
         phone.sendMessage(phone.Contacts.get(1).getPhoneNumber(), "Hey Radu");
         // send more messages
         phone.sendMessage("0755 555 555", "Am ceva sa iti povestesc.");
-        phone.sendMessage("0770 070 707", "Stii masina aia de colectie ce am vazut-o cand am trecut prin Oradea? Sa stii ca am cumparat-o.Ce parere ai?");
+        phone.sendMessage("0770 070 707", "Stii masina aia de colectie ce am vazut-o cand am trecut prin Oradea? Sa stii ca am cumparat-o. Ce parere ai?");
         phone.sendMessage("0770 070 707", "Am facut o investitie buna?");
         // * - you can see all messages for a specific contact
         phone.listMessages(phone.Contacts.get(0).getPhoneNumber());
