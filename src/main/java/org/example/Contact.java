@@ -27,8 +27,7 @@ public class Contact {
         // *  max number of characters - 100
         if (first_name.length() > 100) {
             System.out.println("First name too long (>100)");
-        }
-        else {
+        } else {
             this.first_name = first_name;
         }
     }
@@ -41,8 +40,7 @@ public class Contact {
         // *  max number of characters - 100
         if (last_name.length() > 100) {
             System.out.println("Last name too long (>100)");
-        }
-        else {
+        } else {
             this.last_name = last_name;
         }
     }

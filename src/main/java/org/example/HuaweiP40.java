@@ -1,4 +1,4 @@
 package org.example;
 
-public class HuaweiP40 extends Huawei{
+public class HuaweiP40 extends Huawei {
 }

@@ -1,10 +1,8 @@
 package org.example;
 
-public class App 
-{
-    public static void main( String[] args )
-    {
- //       Phone phone= new Samsung(); // shouldn't compile. commented so that compilation is possible.
+public class App {
+    public static void main(String[] args) {
+        //       Phone phone= new Samsung(); // shouldn't compile. commented so that compilation is possible.
 
         // * - create at least 2 phone brands with 2 models for each
         Phone phone = new SamsungGalaxy6();

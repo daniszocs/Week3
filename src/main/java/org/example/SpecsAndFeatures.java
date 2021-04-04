@@ -13,23 +13,26 @@ public interface SpecsAndFeatures {
 
     void listContacts();
 
-    void sendMessage(String phoneNumber, String messageContent) ;
+    void sendMessage(String phoneNumber, String messageContent);
 
     void listMessages(String phoneNumber);
 
     void call(String phoneNumber);
 
-    void viewHistory() ;
+    void viewHistory();
 
     void setColor(String color);
+
     String getColor();
 
     void setMaterial(String material);
+
     String getMaterial();
 
     int getBatteryLife();
 
     void setIMEI(String IMEI);
+
     String getIMEI();
 
 }

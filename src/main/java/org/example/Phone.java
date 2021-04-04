@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Phone implements SpecsAndFeatures{
+public class Phone implements SpecsAndFeatures {
 
     // * - properties which cannot change: battery life (in number of hours)
     // * - properties that are configurable: color, material
@@ -27,7 +27,7 @@ public class Phone implements SpecsAndFeatures{
 
     @Override
     public void listContacts() {
-        for (Contact contact:Contacts
+        for (Contact contact : Contacts
         ) {
             System.out.println(contact.getS() + ". " + contact.getFirst_name() + " " + contact.getLast_name() + " (" + contact.getPhone_number() + ")");
         }
@@ -40,8 +40,7 @@ public class Phone implements SpecsAndFeatures{
         // *  - a message can have maximum 500 chars
         if (Content.length() > 500) {
             System.out.println("Message was too long (>500).");
-        }
-        else {
+        } else {
             System.out.println("Message " + "'" + Content + "'" + " was sent to: " + phoneNumber);
             Message message = new Message();
             message.to = phoneNumber;
@@ -54,7 +53,7 @@ public class Phone implements SpecsAndFeatures{
 
     @Override
     public void listMessages(String phoneNumber) {
-        for (Message message:Messages
+        for (Message message : Messages
         ) {
             if (message.to.equals(phoneNumber)) {
                 System.out.println("Messages from " + phoneNumber + ": " + message.content);
@@ -67,19 +66,19 @@ public class Phone implements SpecsAndFeatures{
 
     @Override
     public void call(String phoneNumber) {
-            System.out.println("Phone call was sent to: " + phoneNumber);
-            PhoneCall phoneCall = new PhoneCall();
-            phoneCall.to = phoneNumber;
-            PhoneCalls.add(phoneCall);
-            // *  - every time a call is made two hours are taken from the battery life
-            batteryLife = batteryLife - 2;
+        System.out.println("Phone call was sent to: " + phoneNumber);
+        PhoneCall phoneCall = new PhoneCall();
+        phoneCall.to = phoneNumber;
+        PhoneCalls.add(phoneCall);
+        // *  - every time a call is made two hours are taken from the battery life
+        batteryLife = batteryLife - 2;
     }
 
     @Override
     public void viewHistory() {
-        for (PhoneCall phoneCall:PhoneCalls
+        for (PhoneCall phoneCall : PhoneCalls
         ) {
-                System.out.println("Called " + phoneCall.to);
+            System.out.println("Called " + phoneCall.to);
         }
 
     }
@@ -88,6 +87,7 @@ public class Phone implements SpecsAndFeatures{
     public void setColor(String color) {
         this.color = color;
     }
+
     @Override
     public String getColor() {
         return color;
@@ -95,8 +95,9 @@ public class Phone implements SpecsAndFeatures{
 
     @Override
     public void setMaterial(String material) {
-        this.material= material;
+        this.material = material;
     }
+
     @Override
     public String getMaterial() {
         return material;
@@ -111,10 +112,10 @@ public class Phone implements SpecsAndFeatures{
     public void setIMEI(String IMEI) {
         this.IMEI = IMEI;
     }
+
     public String getIMEI() {
         return IMEI;
     }
-
 
 
 }
