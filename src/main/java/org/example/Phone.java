@@ -3,14 +3,14 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Phone{
-
+public class Phone implements SpecsAndFeatures{
 
     String color;
     String material;
     int batteryLife = 1000;
     String IMEI;
 
+    @Override
     public void addContact(String s, String phone_number, String first_name, String last_name) {
         Contact contact = new Contact();
         contact.setS(s);
@@ -21,6 +21,8 @@ public class Phone{
     }
 
     List<Contact> Contacts = new ArrayList<>();
+
+    @Override
     public void listContacts() {
         for (Contact contact:Contacts
         ) {
@@ -30,20 +32,22 @@ public class Phone{
 
     List<Message> Messages = new ArrayList<>();
 
-    public void sendMessage(String phoneNumber, String messageContent) {
-        if (messageContent.length() > 500) {
+    @Override
+    public void sendMessage(String phoneNumber, String Content) {
+        if (Content.length() > 500) {
             System.out.println("Message was too long (>500).");
         }
         else {
-            System.out.println("Message " + "'" + messageContent + "'" + " was sent to: " + phoneNumber);
+            System.out.println("Message " + "'" + Content + "'" + " was sent to: " + phoneNumber);
             Message message = new Message();
             message.to = phoneNumber;
-            message.content = messageContent;
+            message.content = Content;
             Messages.add(message);
             batteryLife = batteryLife - 1;
         }
     }
 
+    @Override
     public void listMessages(String phoneNumber) {
         for (Message message:Messages
         ) {
@@ -55,6 +59,8 @@ public class Phone{
     }
 
     List<PhoneCall> PhoneCalls = new ArrayList<>();
+
+    @Override
     public void call(String phoneNumber) {
             System.out.println("Phone call was sent to: " + phoneNumber);
             PhoneCall phoneCall = new PhoneCall();
@@ -63,6 +69,7 @@ public class Phone{
             batteryLife = batteryLife - 2;
     }
 
+    @Override
     public void viewHistory() {
         for (PhoneCall phoneCall:PhoneCalls
         ) {
@@ -71,24 +78,30 @@ public class Phone{
 
     }
 
+    @Override
     public void setColor(String color) {
         this.color = color;
     }
+    @Override
     public String getColor() {
         return color;
     }
 
+    @Override
     public void setMaterial(String material) {
         this.material= material;
     }
+    @Override
     public String getMaterial() {
         return material;
     }
 
+    @Override
     public int getBatteryLife() {
         return batteryLife;
     }
 
+    @Override
     public void setIMEI(String IMEI) {
         this.IMEI = IMEI;
     }
